@@ -25,15 +25,29 @@ const imgArray = [
  imgListDom.innerHTML = containerImg;  
 
  const imgDom = document.getElementsByClassName('wrap_img');
- const positionImg = 0;
+ let positionImg = 0;
  imgDom[positionImg].classList.add('d-block');
  const next = document.getElementById('next');
  const prev = document.getElementById('prev');
 
  next.addEventListener('click', 
        function() {
-        imgDom[positionImg].classList.remove('d-block');
-        positionImg++;
-        imgDom[positionImg].classList.add('d-block');
+        if (positionImg < imgDom.length - 1){
+            imgDom[positionImg].classList.remove('d-block');
+            positionImg++;
+            imgDom[positionImg].classList.add('d-block');
+        }
+        
+       }
+ )
+
+ prev.addEventListener('click', 
+       function() {
+        if (positionImg > 0){
+            imgDom[positionImg].classList.remove('d-block');
+            positionImg--;
+            imgDom[positionImg].classList.add('d-block');
+        }
+        
        }
  )
