@@ -21,12 +21,14 @@
 .d-none{
     display: none;
 }
+.d-block{
+    display: block;
+}
 
 #next{
     position: absolute;
     right: 50%;
     top: 20px;
-    transform: translateX(-50%);
     font-size: 30px;
     color: white;
     height: 50px;
