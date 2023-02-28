@@ -32,22 +32,24 @@ const imgArray = [
 
  next.addEventListener('click', 
        function() {
+        imgDom[positionImg].classList.remove('d-block');
         if (positionImg < imgDom.length - 1){
-            imgDom[positionImg].classList.remove('d-block');
             positionImg++;
-            imgDom[positionImg].classList.add('d-block');
+        }else if(positionImg == imgDom.length - 1 ){
+            positionImg = 0;
         }
-        
+        imgDom[positionImg].classList.add('d-block');
        }
  )
 
  prev.addEventListener('click', 
        function() {
+        imgDom[positionImg].classList.remove('d-block');
         if (positionImg > 0){
-imgDom[positionImg].classList.remove('d-block');
         positionImg--;
-        imgDom[positionImg].classList.add('d-block');
+        } else if (positionImg == 0){
+            positionImg = imgDom.length - 1;
         }
-        
+        imgDom[positionImg].classList.add('d-block');
        }
  )
