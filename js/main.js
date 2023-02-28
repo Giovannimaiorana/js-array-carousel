@@ -16,10 +16,24 @@ const imgArray = [
 
  for ( let i=0; i < imgArray.length; i++ ) {
     const ImgWrapper = ` <div class="wrap_img ">
-                               <img id="image" src="${imgArray[i]}" > 
+                               <img class="image" src="${imgArray[i]}" > 
                            </div>`;
 
    containerImg += ImgWrapper;      
               
  }
  imgListDom.innerHTML = containerImg;  
+
+ const imgDom = document.getElementsByClassName('wrap_img');
+ const positionImg = 0;
+ imgDom[positionImg].classList.add('d-block');
+ const next = document.getElementById('next');
+ const prev = document.getElementById('prev');
+
+ next.addEventListener('click', 
+       function() {
+        imgDom[positionImg].classList.remove('d-block');
+        positionImg++;
+        imgDom[positionImg].classList.add('d-block');
+       }
+ )

@@ -12,11 +12,14 @@
 }
 .wrap_img{
     height: 100%;
+    display: none;
+   
 }
-#image{
+.image{
     object-fit: cover;
     width: 100%;
     height: 100%;
+    
 }
 .d-none{
     display: none;
